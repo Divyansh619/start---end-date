@@ -80,3 +80,32 @@ inside api start date and end date -->
             body: raw,
             redirect: "follow",
         };
+        
+        
+        
+        Css .......................=>
+        
+        .dateLable {
+  margin: 0px 20px 0px 20px;
+}
+.dateDiv {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+}
+.DateFilter_container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.searchbtn {
+  background-color: #004ebd;
+  color: #fff;
+  padding: 8px 15px;
+  width: 75px;
+  text-align: center;
+  border-radius: 8px;
+  margin-right: 20px;
+  cursor: pointer;
+}
