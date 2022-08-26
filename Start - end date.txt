@@ -1,0 +1,82 @@
+  
+variable :
+.....................
+
+let today = new Date();
+    today.setDate(today.getDate() - 30);
+    let date = new Date(today)
+        .toLocaleDateString("in", {
+            day: "2-digit",
+            year: "numeric",
+            month: "2-digit",
+        })
+        .split("/")
+        .reverse()
+        .join("-");
+
+
+under div body ..................
+
+   <div className={classes.dateDiv}>
+                    <div>
+                        <label className={classes.dateLable}>Start Date :</label>
+                        <input
+                            className={classes.date}
+                            type="date"
+                            value={startDate || date}
+                            onChange={(e) => setStartDate(e.target.value)}
+                        />
+                        <label className={classes.dateLable}>End Date :</label>
+                        <input
+                            type="date"
+                            className={classes.date}
+                            value={
+                                endDate ||
+                                new Date()
+                                    .toLocaleDateString("in", {
+                                        day: "2-digit",
+                                        year: "numeric",
+                                        month: "2-digit",
+                                    })
+                                    .split("/")
+                                    .reverse()
+                                    .join("-")
+                            }
+                            onChange={(e) => setEndDate(e.target.value)}
+                        />
+                    </div>
+
+                    <div className={classes.buttons}>
+                        <div className={classes.searchbtn} onClick={() => Careerlist()}>
+                            Search
+                        </div>
+                    </div>
+                </div>
+
+
+..........................>
+
+
+inside api start date and end date -->
+
+
+ var raw = JSON.stringify({
+            StartDate: startDate || date,
+            EndDate:
+                endDate ||
+                new Date()
+                    .toLocaleDateString("in", {
+                        day: "2-digit",
+                        year: "numeric",
+                        month: "2-digit",
+                    })
+                    .split("/")
+                    .reverse()
+                    .join("-"),
+        });
+        var requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow",
+        };
